@@ -1,0 +1,12 @@
+:root {
+  --primary-color: #ff6f00;
+  --primary-dark-color: #c43e00;
+  --primary-light-color: #ffa040;
+  --text-dark-color: #000000;
+}
+
+nav {
+  background-color: var(--primary-light-color);
+  height: 45px;
+  box-shadow: 3px 2px 4px 3px #ccc;
+}
