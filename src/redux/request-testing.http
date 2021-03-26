@@ -1,0 +1,4 @@
+GET https://coding-challenge-api.aerolab.co/user/me
+Content-Type:application/json
+Accept:application/json
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDVhMTNiZGEyNGI1NzAwMjBjNmM2ZjAiLCJpYXQiOjE2MTY1MTYwMjl9.UKWryAoEIJNtYL-R2VDbFwJ_8SjO3GI6xCTyBoUJrnY

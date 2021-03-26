@@ -3,22 +3,22 @@ import * as types from '../../action-types';
 const initialState = {
   name: '',
   points: 0,
+  redeemHistory: [],
 };
 
 const userReducer = (state = initialState, action) => {
   switch (action.type) {
-    case types.SET_NAME:
+    case types.SET_DATA:
       return {
         ...state,
-        name: action.payload,
+        name: action.payload.name,
+        points: action.payload.points,
+        redeemHistory: action.payload.redeemHistory,
       };
-    case types.SET_POINTS:
-      return {
-        ...state,
-        points: action.payload,
-      };
-
-    default:
-      break;
+    default: {
+      return state;
+    }
   }
 };
+
+export default userReducer;

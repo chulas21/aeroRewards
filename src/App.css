@@ -4,7 +4,3 @@
   --primary-light-color: #ffa040;
   --text-dark-color: #000000;
 }
-
-.App {
-  background-color: var(--primary-light-color);
-}

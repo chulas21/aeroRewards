@@ -6,7 +6,38 @@
 }
 
 nav {
+  display: flex;
+  justify-content: space-between;
   background-color: var(--primary-light-color);
   height: 45px;
   box-shadow: 3px 2px 4px 3px #ccc;
+}
+
+.textContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: max-content;
+  margin-inline: 10px;
+}
+
+.logoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: max-content;
+}
+
+.profileContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: max-content;
+  margin-left: 5px;
+}
+
+.icon {
+  margin-left: 5px;
+  margin-right: 10px;
+  color: yellow;
 }
