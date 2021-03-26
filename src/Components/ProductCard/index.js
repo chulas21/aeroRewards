@@ -1,21 +1,28 @@
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingCart, faCoins } from "@fortawesome/free-solid-svg-icons";
+import "./ProductCard.css";
 
 function ProductCard(props) {
   return (
-    <div>
-      <div className="product-image">
-        <img alt="productImage" src={props.product.img.url}></img>
+    <div className="card">
+      <img className="productImg" src={props.product.img.url} alt="" />
+      <div className="hidden">
+        <span className="textContainer">
+          <b className="productName">{props.product.name}</b> -
+          <em className="productCategory">{props.product.category}</em>
+        </span>
       </div>
-
-      <div className="product-info-container">{props.product.name}</div>
-
-      <div className="add-to-cart-container">
-        <span className="product-price">${props.product.cost}</span>
-        <button>
-          <FontAwesomeIcon icon={faShoppingCart} />
-          Redeem!
+      <div className="control">
+        <button className="btn">
+          <span className="price">
+            {props.product.cost}
+            <FontAwesomeIcon style={{ marginLeft: 5 }} icon={faCoins} />
+          </span>
+          <span className="shopping-cart">
+            <FontAwesomeIcon icon={faShoppingCart} />
+          </span>
+          <span className="buy">Buy Now</span>
         </button>
       </div>
     </div>
