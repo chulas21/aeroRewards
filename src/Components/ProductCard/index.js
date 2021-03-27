@@ -1,14 +1,23 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart, faCoins } from '@fortawesome/free-solid-svg-icons';
-import './ProductCard.css';
+import React from "react";
+import { connect } from "react-redux";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingCart, faCoins } from "@fortawesome/free-solid-svg-icons";
+import { useToasts } from "react-toast-notifications";
+import { redeemProduct } from "./../../redux/reducers/user/actions";
+import "./ProductCard.css";
 
 function ProductCard(props) {
+  const { addToast } = useToasts();
 
-  function buyProduct=()=> {
-    alert("Comprado")
-  }
+  const buyProduct = () => {
+    if (window.confirm("Redeem Product?")) {
+      props.redeemProduct(props.product);
+      addToast("Product successfully redeemed!", {
+        appearance: "success",
+        autoDismiss: true,
+      });
+    }
+  };
 
   return (
     <div className="card">
@@ -24,16 +33,20 @@ function ProductCard(props) {
           className="btn"
           style={
             props.points > props.product.cost
-              ? { backgroundColor: '#49c608' }
-              : { backgroundColor: '#ff0000' }
+              ? { backgroundColor: "#49c608" }
+              : { backgroundColor: "#ff0000" }
           }
           onClick={
             props.points > props.product.cost
               ? () => {
-                  buyProduct()
+                  buyProduct();
                 }
               : () => {
-                  alert('Not enough points!');
+                  alert(
+                    `Not enough points! You need ${
+                      props.product.cost - props.points
+                    } more points.`
+                  );
                 }
           }
         >
@@ -58,4 +71,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(ProductCard);
+export default connect(mapStateToProps, { redeemProduct })(ProductCard);

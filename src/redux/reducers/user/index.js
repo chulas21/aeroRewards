@@ -1,7 +1,7 @@
-import * as types from '../../action-types';
+import * as types from "../../action-types";
 
 const initialState = {
-  name: '',
+  name: "",
   points: 0,
   redeemHistory: [],
 };
@@ -15,6 +15,7 @@ const userReducer = (state = initialState, action) => {
         points: action.payload.points,
         redeemHistory: action.payload.redeemHistory,
       };
+
     default: {
       return state;
     }
