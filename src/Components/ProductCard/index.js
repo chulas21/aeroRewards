@@ -1,9 +1,15 @@
-import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShoppingCart, faCoins } from "@fortawesome/free-solid-svg-icons";
-import "./ProductCard.css";
+import React from 'react';
+import { connect } from 'react-redux';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart, faCoins } from '@fortawesome/free-solid-svg-icons';
+import './ProductCard.css';
 
 function ProductCard(props) {
+
+  function buyProduct=()=> {
+    alert("Comprado")
+  }
+
   return (
     <div className="card">
       <img className="productImg" src={props.product.img.url} alt="" />
@@ -14,7 +20,23 @@ function ProductCard(props) {
         </span>
       </div>
       <div className="control">
-        <button className="btn">
+        <button
+          className="btn"
+          style={
+            props.points > props.product.cost
+              ? { backgroundColor: '#49c608' }
+              : { backgroundColor: '#ff0000' }
+          }
+          onClick={
+            props.points > props.product.cost
+              ? () => {
+                  buyProduct()
+                }
+              : () => {
+                  alert('Not enough points!');
+                }
+          }
+        >
           <span className="price">
             {props.product.cost}
             <FontAwesomeIcon style={{ marginLeft: 5 }} icon={faCoins} />
@@ -22,6 +44,7 @@ function ProductCard(props) {
           <span className="shopping-cart">
             <FontAwesomeIcon icon={faShoppingCart} />
           </span>
+
           <span className="buy">Buy Now</span>
         </button>
       </div>
@@ -29,4 +52,10 @@ function ProductCard(props) {
   );
 }
 
-export default ProductCard;
+const mapStateToProps = (state) => {
+  return {
+    points: state.user.points,
+  };
+};
+
+export default connect(mapStateToProps)(ProductCard);

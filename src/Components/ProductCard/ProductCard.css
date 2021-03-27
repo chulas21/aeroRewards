@@ -1,90 +1,102 @@
-.card{
-  margin:10px;
+.card {
+  margin: 10px;
   background-color: grey;
   width: 250px;
-  height:min-content;
+  height: min-content;
   border-radius: 10px;
-  padding:10px;
-  
+  padding: 10px;
+  box-shadow: 3px 2px 4px 3px #333;
 }
-.card:hover .hidden{
+.card:hover .hidden {
   height: 50px;
   transition: height 0.1s;
 }
+.card:hover {
+  box-shadow: 5px 3px 5px 4px #333;
+}
 
-.productImg{
-  border-radius:5px
+.productImg {
+  border-radius: 5px;
 }
 
 .btn {
-	transform: translateY(0px);
-	transition: 0.3s linear;
-	background: #49C608;
-	border-radius: 5px;
+  transform: translateY(0px);
+  transition: 0.3s linear;
+  background: #49c608;
+  border-radius: 5px;
   position: relative;
   overflow: hidden;
-	cursor: pointer;
-	outline: none;
-	border: none;
-	color: #eee;
-	padding: 0;
-	margin: 0;
-	
+  cursor: pointer;
+  outline: none;
+  border: none;
+  color: #eee;
+  padding: 0;
+  margin: 0;
 }
 
-.btn:hover{transform: translateY(-4px);}
+.btn:hover {
+  transform: translateY(-4px);
+}
 
 .btn span {
-	font-family: 'Farsan', cursive;
-	transition: transform 0.3s;
-	display: inline-block;
+  font-family: 'Farsan', cursive;
+  transition: transform 0.3s;
+  display: inline-block;
   padding: 10px 20px;
-	font-size: 1.2em;
-	margin:0;
-	
+  font-size: 1.2em;
+  margin: 0;
 }
-.btn .price, .shopping-cart{
-	background: #333;
-	border: 0;
-	margin: 0;
+.btn .price,
+.shopping-cart {
+  background: #333;
+  border: 0;
+  margin: 0;
 }
 
 .btn .price {
-	transform: translateX(-10%); padding-right: 15px;
+  transform: translateX(-10%);
+  padding-right: 15px;
 }
 
 .btn .shopping-cart {
-	transform: translateX(-100%);
+  transform: translateX(-100%);
   position: absolute;
-	background: #333;
-	z-index: 1;
+  background: #333;
+  z-index: 1;
   left: 0;
   top: 0;
 }
 
-.btn .buy {z-index: 3; font-weight: bolder;}
+.btn .buy {
+  z-index: 3;
+  font-weight: bolder;
+}
 
-.btn:hover .price {transform: translateX(-110%);}
+.btn:hover .price {
+  transform: translateX(-110%);
+}
 
-.btn:hover .shopping-cart {transform: translateX(0%);}
+.btn:hover .shopping-cart {
+  transform: translateX(0%);
+}
 
-.productName{
+.productName {
   font-size: 20px;
 }
 
-.hidden{
+.hidden {
   height: 0px;
-  overFlow:hidden;
+  overflow: hidden;
 }
 
-.control{
+.control {
   display: flex;
-  justify-content:center;
-  align-items:center;
-  margin-top:10px
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
 }
 
-.textContainer{
-  display:flex;
+.textContainer {
+  display: flex;
   flex-wrap: wrap;
 }

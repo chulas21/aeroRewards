@@ -1,12 +1,23 @@
+:root {
+  --primary-color: #ff6f00;
+  --primary-dark-color: #c43e00;
+  --primary-light-color: #ffa040;
+  --text-dark-color: #000000;
+}
+
 .songs_list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
-  margin:15px
+  justify-content: center;
+  margin: 45px;
 }
 
 .product_cards_container {
   padding: 10px;
   justify-content: space-around;
   margin: auto;
+  background-color: rgba(255, 160, 44, 0.4);
+}
+.productWraper {
+  height: 350px;
 }

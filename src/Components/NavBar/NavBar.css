@@ -11,6 +11,9 @@ nav {
   background-color: var(--primary-light-color);
   height: 45px;
   box-shadow: 3px 2px 4px 3px #ccc;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 .textContainer {
