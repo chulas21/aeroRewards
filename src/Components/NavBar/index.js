@@ -1,14 +1,14 @@
-import React from 'react';
-import logo from './kite.png';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCoins } from '@fortawesome/free-solid-svg-icons';
-import './NavBar.css';
-import { connect } from 'react-redux';
+import React from "react";
+import logo from "./kite.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCoins } from "@fortawesome/free-solid-svg-icons";
+import "./NavBar.css";
+import { connect } from "react-redux";
 
 function NavBar({ userName, points }) {
   return (
     <nav>
-      <div className="textContainer">AeroRewards Program</div>
+      <div className="titleContainer">AeroRewards Program</div>
       <div className="logoContainer">
         <img src={logo} width="35" height="35" alt="" />
       </div>
